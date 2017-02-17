@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[slovak,english]{babel}
+\usepackage{palatino,verbatim}
+
+\newcommand\sktxt[1]{\foreignlanguage{slovak}{#1}}
+
+\title{My first document}
+\date{2016-01-29}
+\author{Andrej \sktxt{Šišila}}
+
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\pagenumbering{arabic}
+
+\section{Kapitola}
+\sktxt{ Slovenský text s diakřitikou. }
+
+\subsection{Podkapitola}
+\sktxt{Ďalší text o čomsi ...}
+
+\end{document}

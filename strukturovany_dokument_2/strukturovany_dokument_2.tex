@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[slovak,english]{babel}
+\usepackage{palatino,verbatim}
+
+\newcommand\sktxt[1]{\foreignlanguage{slovak}{#1}}
+
+\title{\sktxt{Názov dokumentu}}
+\date{29.1.2016}
+\author{Andrej \sktxt{Šišila}}
+
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\pagenumbering{arabic}
+
+\section{Názov prvej kapitoly}
+\sktxt{Text o niečom}
+
+\subsection{Podkapitola}
+\sktxt{Ďalší text o čomsi ...}
+
+\subsubsection{Podkapitola}
+\sktxt{Ešte ďalší text o čomsi ...}
+	\paragraph{Odsek}
+	\sktxt{Viac textu}
+		\subparagraph{Pododsek}
+		\sktxt{Podrobnosti o odseku}
+
+	\paragraph{}
+	\sktxt{Tento odsek nemá názov}
+		\subparagraph{}
+		\sktxt{Ani tento pododsek nemá názov, preto sú obidva odseky inak zarovnané.}
+
+\newpage
+\section{Názov druhej kapitoly}
+
+\end{document}
