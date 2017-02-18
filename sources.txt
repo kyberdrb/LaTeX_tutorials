@@ -1,3 +1,4 @@
-http://stackoverflow.com/questions/1017055/get-started-with-latex-on-linuxi
+http://stackoverflow.com/questions/1017055/get-started-with-latex-on-linux
 https://www.latex-tutorial.com/tutorials/
 https://www.latex-tutorial.com/tutorials/beginners/
+https://www.sharelatex.com/project/51fa85c3db89c3c351085071
