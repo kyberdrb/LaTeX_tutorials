@@ -1,0 +1,85 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {slovak}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Ciele pr\IeC {\'a}ce}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Topol\IeC {\'o}gia siete}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Linux}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}In\IeC {\v s}tal\IeC {\'a}cia opera\IeC {\v c}n\IeC {\'e}ho syst\IeC {\'e}mu Debian 8.6.0 x64}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}In\IeC {\v s}tal\IeC {\'a}cia serverov}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}In\IeC {\v s}tal\IeC {\'a}cia desktopov}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Z\IeC {\'a}kladn\IeC {\'a} konfigur\IeC {\'a}cia}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Firewall}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.1}Sp\IeC {\'u}\IeC {\v s}\IeC {\v t}anie iptables skriptu po \IeC {\v s}tarte}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}VLAN}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}DNS}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}DHCP}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}NTP}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.8}Web server}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.1}Joomla}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.2}Mediawiki}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.9}Po\IeC {\v s}tov\IeC {\'y} server}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Windows}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Section Title}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}SubSection Title}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Z\IeC {\'a}ver}{12}

@@ -1,0 +1,8 @@
+Run command
+	pdflatex <tex_file>.tex
+TWO TIMES!! - first time it compiles text, second time compiles references!!
+
+
+Use keyword
+	\paragraph{}
+EXPLICITLY, to have more consistent paragraph formatting.

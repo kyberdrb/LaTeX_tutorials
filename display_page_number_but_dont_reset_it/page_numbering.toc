@@ -1,0 +1,4 @@
+\select@language {german}
+\contentsline {section}{\numberline {1}A}{2}
+\contentsline {section}{\numberline {2}B}{3}
+\contentsline {section}{\numberline {3}C}{4}

@@ -1,0 +1,24 @@
+\documentclass[a4paper, 12pt, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+
+\begin{document}
+\pagestyle{empty}  % No page numbers/headers/footers
+\tableofcontents
+There is no page number on this page, great!
+\clearpage
+\pagestyle{plain} % restore the plain style
+%\renewcommand{\thepage}{\arabic{page}}  % Setting the page output to arabic   -- not necessary, unless `book` class and `\frontmatter` is used.
+
+\section{A}
+This should not be the first page, 
+just the first page that displays the numbers.
+In this example, this should be page 2
+\clearpage
+\section{B}
+text
+\clearpage
+\section{C}
+text
+\end{document}
