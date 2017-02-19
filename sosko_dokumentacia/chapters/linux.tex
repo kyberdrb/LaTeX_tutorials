@@ -32,25 +32,106 @@ iptables skript po štarte
 
 \section{VLAN}
 \paragraph{}
+Servery sú vo VLAN 10, desktopy vo VLAN 20. Smerovanie medzi VLANami je vykonávané na FW. Preto sme na FW museli nainštalovať balíčky „isc-dhcp-server“ a „vlan“ t.j. „apt-get installisc-dhcp-server vlan“. Potom sme editovali súbor „/etc/network/interfaces“ tak, že sme odstránili adresné informácie z vnútorného interfacu eth1, ale nechali sme „auto eth1“, aby sa port zapol (UP). Následne sme pridali subinterface eth1.10 pre VLAN 10 (servery) a eth1.20 pre VLAN 20 (desktopy). Adresný rozsah pre jednotlivé VLAN bola sieť 192.168.0.0/24 rozdelená na dve /25 siete: 192.168.0.0 - 192.168.0.127 pre VLAN 10 a 192.168.0.128 - 192.168.0.255 pre VLAN 20
+\paragraph{}
+FW je DHCP relay server. Všetky DHCP požiadavky prepošle FW DHCP serveru, ktorý pridelí klientovi IP adresu a ďalšie nakonfigurované informácie. Týmto spôsobom je FW zodpovedný iba za filtrovanie premávky a server za služby poskytované na sieti.
+IP adresa DHCP servera sa do konfiguračného súboru „/etc/default/isc-dhcp-relay“ DHCP relay agenta musí zadať BEZ úvodzoviek a musíme počúvať na obidvoch subinterfacocht.j. eth1.10 aj eth1.20.
 
 \section{DNS}
 \paragraph{}
+Systém názvov domén alebo systém mien domén, alebo systém doménových mien (Domain Name System), skr. DNS, je systém, ktorý ukladá prístup k informácii o názve stroja (hostname) a názve domény v istej distribuovanej databáze v počítačových sieťach ako internet. Najdôležitejšie je, že poskytuje mechanizmus získania IP adresy pre každé meno stroja (lookup) a naopak (reverse), a uvádza poštové servery (MX záznam) akceptujúce poštu pre danú doménu.
+\paragraph{}
+DNS poskytuje na internete všeobecne dôležitú službu, pretože kým počítače a sieťový hardvér pracujú s IP adresami, ľudia si vo všeobecnosti ľahšie pamätajú mená strojov a domén pri použití napr. v URL a e-mailovej adrese (obzvlášť nepríjemné by to bolo pri IPv6 adrese). DNS tak tvorí prostredníka medzi potrebami človeka a softvéru.
+\paragraph{}
+V rámci našej doménovej zóny „sos3.local“ sme si museli nastaviť dva DNS servery: Master (S1) a Slave (S2). Slave zrkadlí hlavný DNS server a v prípade poruchy ho zastúpi. Keďže si Slave DNS server všetko stiahne z Master DNS servera, netreba ho primárne konfigurovať, ale stačí mu  nastaviť „allow-transfer“ na privátnu IP Master DNS.
+\paragraph{}
+Na obidva servery sme nainštalovali DNS server a nástroje na overenie jeho funkčnosti príkazom „apt-get install bind9 bind9utils dnsutils“.
+\paragraph{}
+Master DNS serveru sme upravovali súbory „/etc/resolv.conf“ (konfigurácia adries DNS serverov), „/etc/bind/master/db.sos3.local“ (view-lokálny), „/etc/bind/master/db.sos3.external“ (view-verejný), „/etc/bind/named.conf.local“ (definovanie lokálnych a verejných DNS View). Obsah súboru „/etc/resolv.conf“ je uvedený nižšie.
+\\
+\\
+domain sos3.local\\
+nameserver 192.168.0.2\\
+nameserver 192.168.0.3\\
+\\
+\\
+\paragraph{}
+V adresári „/etc/bind“ na S1 sme vytvorili adresár „master“, do ktorého sme ukladali zónové súbory pre DNS.
+\paragraph{}
+Viewy sme nastavovali na Master  DNS serveri súbormi „/etc/bind/named.conf.local“, „/etc/bind/master/db.sos3.local“, „/etc/bind/master/db.sos3.external“. Pri dotazovaní na doménové meno nášho DNS zvnútra sa použijú privátne adersy DNS serverov zo súboru „/etc/bind/master/db.sos3.local“. Pri dotazovaní na doménové meno nášho DNS zvonku sa použijú verejné adersy DNS serverov zo súboru „/etc/bind/master/db.sos3.external“. O tom, aký súbor sa použije, rozhoduje súbor „/etc/bind/named.conf.local“
+\paragraph{}
+Počítače v lokálnej sieti sa dokážu navzájompingať pomocou svojich hostname. Preklad hostname názvov na IP adresy je definovaný v súbore „/etc/bind/master/db.sos3.local“
+\paragraph{}
+Firewall bol nakonfigurovaný tak, aby prepúšťal DNS požiadavky na lokálnej sieti, a tiež aby prepúšťal požiadavky z internetu na obidva DNS servery t.j. aby boli obidva DNS servery viditeľné zvonku (PREROUTING). Záznamy pre DNS sú pre obidve verejné IP adresy pre udp aj tcp port 53 (zdrojový aj cieľový).
+\paragraph{}
+V prípade, že sa vyskytli problémy, skúšali sme vypnúť firewall, kontrolovali sme konfiguračné súbory Master DNS servera príkazmi „named-checkconf“ a „named-checkzone“ a príkazom „tcpdump“ sme monitorovali prenášané správy. Pri každej zmene konfiguračných súborov bolo treba reštartovať bind9 / isc-dhcp-server / interface.
+\\
+\paragraph{}
+Zdroje:\\
+https://www.howtoforge.com/two\_in\_one\_dns\_bind9\_views\\
 
 \section{DHCP}
 \paragraph{}
+DHCP server (S2) sme museli upraviť tak, aby prideľoval aj DNS adresy serverov. Súbor „/etc/dhcp/dhcpd.conf“ na S1 sme upravili tak, že sme doň pridali privátne IP adresy DNS serverov (option domain-name-servers). Do časti pre podsieť sme definovali názvy týchto serverov. Voľbu „optionhost-name“ sme zmenili z pôvodného „example.org“ na „sos3.local“. Tým, že sme nastavili DNS server, nemusíme meniť na jednotlivých hostoch súbor „/etc/resolv.conf“.
+\paragraph{}
+Dynamic Host Configuration Protocol (DHCP) je súbor zásad, ktoré využívajú komunikačné zariadenia (počítač, router alebo sieťový adaptér), umožňujúci zariadeniu vyžiadať si a získať IP adresu od servera, ktorý má zoznam adries voľných na použitie.DHCP Server (Dynamic Host Configuration Protocol) vykonáva automatické pridelenie IP adries svojim klientom. Môžu to byť akékoľvek systémy, podporujúce DHCP. DHCP je štandardný protokol, môžu ho využívať aj systémy mimo Microsoft. Z Microsoft operačných systémov podporujú funkciu DHCP klienta všetky až na veľmi exotický LAN Manager pre OS / 2.V rámci siete potom máme DHCP Server - prideľujúca adresy a počítače - ktoré je od neho preberajú (DHCP Clients). V sieti môžu byť aj počítače, ktoré majú tieto adresy nastavené manuálne.
 
 \section{NTP}
 \paragraph{}
+NTP(Network Time Protocol) je protokol na sychronizáciu všetkých počítačov pripojených do vnutornej siete. Tento protokol zaisťuje, aby všetky počítače v sietei mali rovnaký a presný čas. Bol nvrhnutý aby odolával následkom premenlivého zdržania pri doručovaní paketov. NTP používa UDP na porte 123. NTP server sme zvolili server2, ktorý má ip adresu 192.168.0.3. Nainštalovali sme NTP príkazom apt-get install ntp. Na klientoch sme nainštalovali NTP pomocou príkazu apt-get installntpntpdate. V súbore na serveri s2 /etc/ntp.conf sme pridali slovenské servery zo stránky www.pool.ntp.org/zone/sk. a ostatné servery sme zakomentovali. Klienti si z master serveru aktualizujú čas.
 
 \section{Web server}
 \paragraph{}
+Apache HTTP Server je softwarový webový server s Opensource licenciou pre Linux, BSD, Microsoft Windows a iné platformy.
+\paragraph{}
+PHP (PHP: Hypertext Preprocessor) je populárny opensource skriptovací jazyk, ktorý sa používa najmä na programovanie klient-server aplikácií (na strane servera) a pre vývoj dynamických webových stránok.
+\paragraph{}
+MySQL je slobodný a otvorený viacvláknový, viacužívateľský SQL relačný databázový server. MySQL je podporovaný na viacerých platformách (ako Linux, Windows či Solaris) a je implementovaný vo viacerých programovacích jazykoch ako PHP, C++ či Perl. Databázový systém je relačný, typu DBMS (database management system). Každá databáza je v MySQL tvorená z jednej alebo z viacerých tabuliek, ktoré majú riadky a stĺpce. V riadkoch sa rozoznávajú jednotlivé záznamy, stĺpce udávajú dátový typ jednotlivých záznamov, pracuje sa s nimi ako s poľami. Práca s MySQL databázou je vykonávaná pomocou takzvaných dotazov, ktoré vychádzajú z programovacieho jazyka SQL (StructuredQueryLanguage).
+\paragraph{}
+Na webový server sme použili apache. Apache HTTP Server je softwarový webový server s Opensource licenciou pre Linux, BSD, Microsoft Windows a iné platformy. V dnešnej dobe je najrozšírenejším na celom svete. Pre plnú fukncionalitu webového servera sme museli nainštalovať nainštalovaťapache, mysql, php príkazom:\\
+\paragraph{}
+apt-get install apache2 mysql php5ň\\
+\paragraph{}
+V adresári /var/www/ sme vytvorili priečinky s názvami web1 a web2. Kde web1 a web2 predstavovali dva virutálne webové servery. Následne sme v etc/apache2/sites-available 003-wiki.sos3.local.conf sme pridali cestu ku web stránke /var/www/web1 a ServerName web2.sos3.local. Pre joomlu v súbore 002-joomla.sos3.local.conf sme pridlai cestu k adresaru ked uz DocumentRoot /var/www/web1 a ServerName web1.sos3.local
+\paragraph{}
+Následne do DNS záznamov sme museli pridať:\\
+\paragraph{}
+db.sos1.local\\
+web1 IN A 192.168.0.4\\
+web2 IN A 192.168.0.4\\
+\\
+db.sos1.public\\
+web1 IN A 158.193.139.74\\
+web2 IN A 158.193.139.74\\
 
 \subsection{Joomla}
 \paragraph{}
+V priečinku /var/www/web2 sme stiahli joomlu verziu 3.6 pomocou príkazuň\\
+\paragraph{}
+wget https://github.com/.../Joomla\_3.6.0-Stable-Full\_Package.zip\\
+\paragraph{}
+V ďalšom kroku sme odzipovali tento súbor príkazom\\
+\paragraph{}
+unzip Joomla\_3.6.0-Stable-Full\_Package.zip\\
+\paragraph{}
+Následne sme v prehliadači otvorili web1.sos3.local a podľa príslušných krokov sme nainštalovali joomlu. Ake su tam prava? Root:root nefunguje
 
 \subsection{Mediawiki}
 \paragraph{}
+V priečinku var/www/web1 sme stiahli Wikimedia pomocou príkazu\\
+\paragraph{}
+wgethttps://www.mediawiki.org/wiki/Download/mediawiki-1.2.8.zip\\
+\paragraph{}
+Následne sme odzipovali tento súbor príkazom\\
+\paragraph{}
+unzip mediawiki-1.2.8.zip\\
+\paragraph{}
+A v poslednom kroku sme v prehliadači web2.sos3.local nainštalovali mediawiki.
 
 \section{Poštový server}
 \paragraph{}
-
+Na poštový server sme použili postfix.Postfix je počítačový program pre unixové systémy pro prepravu elektronickej pošty (MTA).
+\paragraph{}
+Najprv bolo ptorebné nainštalovať postfix príkazom apt-get installpostfix prešli sme inštaláciou kde sme nastavili hostname sos3.local. Následne sme museli reštartovať postfixservicepostfixrestart. V súbore /etc/postfix/main.cf je potrebné upraviť myhostname = sos3.local, odkomentovať\\
+\paragraph{}
+pridat konfigurak

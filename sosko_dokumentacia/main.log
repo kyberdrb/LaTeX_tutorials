@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.2.18)  18 FEB 2017 17:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.2.18)  19 FEB 2017 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -589,7 +589,7 @@ Package biblatex Info: ... file 'slovak.lbx' not found.
 
 
 Package biblatex Warning: Language 'slovak' not supported.
-(biblatex)                Using fallback language 'english' on input line 27.
+(biblatex)                Using fallback language 'english' on input line 28.
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -605,18 +605,18 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count218
@@ -702,8 +702,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' not found.
 No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 27.
-Package biblatex Info: Reference segment=0 on input line 27.
+Package biblatex Info: Reference section=0 on input line 28.
+Package biblatex Info: Reference segment=0 on input line 28.
 (./titlepage.tex [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
@@ -761,7 +761,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
 [8
 
-])
+]
+Overfull \hbox (2.47339pt too wide) in paragraph at lines 37--39
+\OT1/cmr/m/n/12 van^^Se na sieti. IP ad-resa DHCP ser-vera sa do kon-fi-gura^^T
+cn^^Seho s^^Suboru []/etc/default/isc-
+ []
+
+
+Overfull \hbox (10.82634pt too wide) in paragraph at lines 42--43
+\OT1/cmr/m/n/12 n^^Sazve stroja (host-name) a n^^Sazve dom^^Seny v is-tej dis-t
+ri-bu-ova-nej da-tab^^Saze v po^^Tc^^S^^Pta^^Tcov^^Sych
+ []
+
+
+Overfull \hbox (10.98651pt too wide) in paragraph at lines 44--45
+\OT1/cmr/m/n/12 men^^Sa stro-jov a dom^^Sen pri pou^^Tzit^^S^^P napr. v URL a e
+-mailovej ad-rese (ob-zvl^^Sa^^Tst[] nepr^^S^^Pjemn^^Se
+ []
+
+
+Overfull \hbox (95.09824pt too wide) in paragraph at lines 50--58
+\OT1/cmr/m/n/12 DNS ser-ve-rov), []/etc/bind/master/db.sos3.local\ (view-lok^^S
+alny), []/etc/bind/master/db.sos3.external\
+ []
+
+
+Overfull \hbox (6.33565pt too wide) in paragraph at lines 50--58
+\OT1/cmr/m/n/12 (view-verejn^^Sy), []/etc/bind/named.conf.local\ (de-fi-no-va-n
+ie lok^^Salnych a ve-rejn^^Sych DNS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--58
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -769,46 +818,176 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [9]
-Kapitola 5.
-(./chapters/windows.tex <images/graph1.png, id=36, 256.96pt x 248.93pt>
-File: images/graph1.png Graphic file (type png)
-
-<use images/graph1.png>
-Package pdftex.def Info: images/graph1.png used on input line 8.
-(pdftex.def)             Requested size: 128.0387pt x 124.03926pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 9.
- <images/graph2.png, id=38, 258.9675pt x 248.93pt>
-File: images/graph2.png Graphic file (type png)
-
-<use images/graph2.png>
-Package pdftex.def Info: images/graph2.png used on input line 15.
-(pdftex.def)             Requested size: 128.0387pt x 123.08208pt.
- <images/graph3.png, id=39, 255.95625pt x 245.91875pt>
-File: images/graph3.png Graphic file (type png)
-
-<use images/graph3.png>
-Package pdftex.def Info: images/graph3.png used on input line 22.
-(pdftex.def)             Requested size: 128.0387pt x 123.01535pt.
- [10
-
- <./images/graph1.png> <./images/graph2.png> <./images/graph3.png>]) [11]
-Kapitola 6.
-(./chapters/zaver.tex
-
-LaTeX Warning: Citation 'latexcompanion' on page 12 undefined on input line 3.
+Overfull \hbox (16.77036pt too wide) in paragraph at lines 61--62
+ [] \OT1/cmr/m/n/12 Viewy sme na-sta-vo-vali na Mas-ter DNS ser-veri s^^Subormi
+ []/etc/bind/named.conf.local\,
+ []
 
 
-LaTeX Warning: Citation 'knuthwebsite' on page 12 undefined on input line 5.
+Overfull \hbox (114.39305pt too wide) in paragraph at lines 61--62
+\OT1/cmr/m/n/12 n^^Sa^^Tsho DNS zvonku sa pou^^Tzij^^Su ve-rejn^^Se adersy DNS 
+ser-ve-rov zo s^^Suboru []/etc/bind/master/db.sos3.external\.
+ []
 
 
-LaTeX Warning: Citation 'einstein' on page 12 undefined on input line 7.
+Overfull \hbox (55.84496pt too wide) in paragraph at lines 63--64
+\OT1/cmr/m/n/12 Pre-klad host-name n^^Sazvov na IP ad-resy je de-fi-no-van^^Sy 
+v s^^Subore []/etc/bind/master/db.sos3.local\ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Overfull \hbox (31.38031pt too wide) in paragraph at lines 95--96
+\OT1/cmr/m/n/12 dlai cestu k ad-re-saru ked uz Do-cu-men-tRoot /var/www/web1 a 
+Ser-ver-Name web1.sos3.local 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+
+Overfull \hbox (9.22948pt too wide) in paragraph at lines 135--136
+\OT1/cmr/m/n/12 sme in^^Tstal^^Saciou kde sme na-sta-vili host-name sos3.local.
+ N^^Sasledne sme mu-seli re^^Tstartovat[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
 
 )
 
-LaTeX Warning: Empty bibliography on input line 58.
+Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
+ Make it at least 15.71667pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-[12
+[13]
+Kapitola 5.
+(./chapters/windows.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--10
+
+ []
+
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 23.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 23.
+ [14
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 31--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--42
+
+ []
+
+[15])
+Overfull \hbox (17.34859pt too wide) in paragraph at lines 58--55
+\OT1/cmr/m/n/12 hnut^^Seho bal^^S^^P^^Tcka, za-klik-neme web mail ser-vice(serv
+er). V na-sle-duj^^Sucich kro-koch nap^^S^^P^^Tseme
+ []
+
+
+Overfull \hbox (0.98628pt too wide) in paragraph at lines 58--55
+\OT1/cmr/m/n/12 do Do-main Name: sos3.local a DNS host: 192.168.0.2 a smtp port
+: 25. Po^^Tcas in^^Tstal^^Sacie
+ []
+
+[16]
+Kapitola 6.
+(./chapters/zaver.tex
+
+LaTeX Warning: Citation 'latexcompanion' on page 17 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'knuthwebsite' on page 17 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'einstein' on page 17 undefined on input line 7.
+
+)
+
+LaTeX Warning: Empty bibliography on input line 59.
+
+[17
 
 ] (./main.aux)
 
@@ -824,24 +1003,23 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9319 strings out of 493105
- 152196 string characters out of 6137072
- 551201 words of memory out of 5000000
- 12646 multiletter control sequences out of 15000+600000
- 10067 words of font info for 35 fonts, out of 8000000 for 9000
+ 9305 strings out of 493105
+ 151863 string characters out of 6137072
+ 554127 words of memory out of 5000000
+ 12634 multiletter control sequences out of 15000+600000
+ 9151 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,43p,825b,1616s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,43p,925b,1626s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (12 pages, 119924 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (17 pages, 109690 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
