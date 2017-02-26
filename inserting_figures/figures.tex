@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{chngcntr}
+\begin{document}
+\begin{figure}
+  \caption{fig:before}\label{fig:before}
+\end{figure}
+Figure~\ref{fig:before}.
+
+I'm trying to reference Figure~\ref{fig:regress}, subfigure~\ref{fig:linfit} and \ref{fig:quadfit} as well as \ref{fig:cubicfit} here.
+
+\hrulefill
+\begin{figure}[htp]
+  \centering
+  \begin{subfigure}{0.8\textwidth}
+    \caption{Scatter plot fitted with straight line}
+    \label{fig:linfit}
+  \end{subfigure}%
+
+  \begin{subfigure}{0.8\textwidth}
+    \caption{Scatter plot fitted with 2nd degree polynomial}
+    \label{fig:quadfit}
+  \end{subfigure}
+  \phantomcaption%                                                                                                                  either a phantom caption
+%  \caption{Scatteru plots of wavelength vs. pixel position for the spectrum from night 1, fitted with polynomials of orders 1-3.}% or a real one
+\end{figure}
+
+\hrulefill
+\begin{figure}[htp]
+  \ContinuedFloat
+  \centering
+  \begin{subfigure}{0.8\textwidth}
+    \caption{Scatter plot fitted with 3rd degree polynomial} 
+    \label{fig:cubicfit}
+  \end{subfigure}
+  \caption{Scatteru plots of wavelength vs. pixel position for the spectrum from night 1, fitted with polynomials of orders 1-3.}   \label{fig:regress}
+\end{figure}
+\end{document}

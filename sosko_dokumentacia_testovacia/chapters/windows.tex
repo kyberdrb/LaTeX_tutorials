@@ -1,34 +1,3 @@
-\section{Inštalácia}
-\paragraph{}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.3]{win_priprava}
-\caption{Server Manager}
-\label{fig:x win_server_man}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.7]{win_priprava_2}
-\caption{Inštalácia DHCP, DNS a IIS}
-\label{fig:x win_prep_2}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.7]{win_priprava_3}
-\caption{}
-\label{fig:x win_prep_3}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.7]{win_priprava_4}
-\caption{}
-\label{fig:x win_prep_4}
-\end{figure}
-
 \section{DHCP}
 \paragraph{}
 Inštaláciu sme vykonali vo Windows service manager - Add Roles and Features, vybrali si možnosť DHCP server.
@@ -45,13 +14,6 @@ Potom  sme zvolili aký dlhý čas si server bude pamätať IP adresy ktoré nie
 \paragraph{}
 Nakoniec sme nastavili bránu na „192.168.1.1”, pridali sme IP adresy našich DNS serverov, teda  „192.168.1.2“ a „192.168.1.3”. , a dokončili inštaláciu kliknutím na Finish.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.6]{win_dhcp_win_pool}
-\caption{Konfigurácia DHCP}
-\label{fig:x win_dhcp_pool}
-\end{figure}
-
 \section{DNS}
 \paragraph{}
 V prvom rade sme si zvolili Master a Slave. Master je server1 (192.168.0.2) a Slave server2 (192.168.0.1)
@@ -61,13 +23,6 @@ DNS master nainštalujeme pomocou Windows Server Manager. Klikneme na Manage , v
 Po inštalácií DNS balíka sme sa dostali cez Tools -\textgreater{} DNS -\textgreater{} Configure a DNS server -\textgreater{} Create a forward lookupzone k vytvoreniuprimárnej forward lookupzóny sos1.local , nastavili sme aj  nech záznamy preposiela na Slave 192.168.0.3.
 \paragraph{}
 Prešli sme k inštalácii DNS Slave.Postup ako pri DNS Master avšak  DNS server bolo potrebné nastaviť na slavemode. Vybrali sme  Tools -\textgreater{} Forward lookupzones -\textgreater{} New zone. Hneď v prvom kroku sme vybrali  možnosť nie Primaryzone ale Secondaryzone a taktiež  meno zóny .V ďalšom kroku určíme DNS Masterserver,v našom riešení ma  IP 192.168.0.2 .Dokončíme vytváranie zóny pomocou Next a Finish. Onedlho si Slave stiahne záznamy z DNS Master servera.
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.7]{win_dns_win_zaznamy}
-\caption{DNS záznamy}
-\label{fig:x win_dns}
-\end{figure}
 
 \section{NTP}
 \paragraph{}
@@ -87,52 +42,17 @@ imidž
 \paragraph{}
 potvrdili sme službu Routing a následne sme ju nainštalovali. Pri inštalácii zvolíme sie\v{t}ový adaptér eth0, ktorý je pripojený k internetu. Po inštalácii je NAT plne funkčné, ale je potrebné prida\v{t} NAT záznamy na porte 53.  Ďalej sme ho potrebovali nakonfigurovať v control panel -\textgreater{} Administrative tools -\textgreater{} Routing and Remote Access. Po kliknutí na NAT, vyberieme záložku s adaptérom, ktorý je pripojený k internet. V Address Pool je potrebné nastavi\v{t} from, čo znamená našu počiatočnú public adresu 158.193.139.74 a to, čo je naša koncová adresa 158.193.139.75 a maska 255.255.255.0. V záložke services and ports je potrebné prida\v{t} 4 nové záznamy NAT pre DNS(Master-Slave, TCP-UDP).
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{win_iis_remote_access}
-\caption{Povolenie vzdialeného prístupu}
-\label{fig:x win_web}
-\end{figure}
-
 \section{Web server}
 \paragraph{}
-Webserver IIS (Internet Information Server) sme pridali cez windows server manager tlačidlom Addroles and features, kde sme vyhľadali Web Server ISS a pokračujeme ďalej. Pri ponuke Role Services
+Webserver ISS (Internet Information Server) sme pridali cez windows server manager tlačidlom Addroles and features, kde sme vyhľadali Web Server ISS a pokračujeme ďalej. Pri ponuke Role Services
 \paragraph{}
 Následne nainštalujeme služby na server. Po úspešnej inštalácii sa IIS objaví na \v{l}avom paneli v server manager-i. Klikneme na ikonu IIS a v zozname dostupných serverov sa zjaví jeden - ten, na ktorom uskuto\v{c}\v{n}ujeme konfiguráciu. Klikneme na\v{n} pravým tla\v{c}idlom myši a z ponuky zvolíme možnos\v{t} Internet Information Services (IIS) Manager. Otvorí sa nové okno, v ktorého \v{l}avom paneli sa nachádza náš server. Rozbalíme jeho ponuku a klikneme na Sites. Pravý klik na Default Web Site nám ponúkne viacero možností vrátane nastavenia webstránky a pridania novej.
 
 \paragraph{}
 Po inštalácii sa nachádza ISS v ľavom paneli vo Windows Server Manager-i. Po kliknutí na tools v pravom hornom rohu klikneme Internet Information Services (ISS) manager. A po rozkliknutí na ľavom rohu je už vytvorená default sites. Otvoriť ju je možné zadaním do browseru “localhost”.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{win_iis_web_server}
-\caption{Inštalácia webového servera IIS}
-\label{fig:x win_web}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.5]{win_iis_web2}
-\caption{Zdrojový kód stránky "web2"}
-\label{fig:x win_web2_source}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.4]{win_iis_web1_web2}
-\caption{Ukážka webových stránok "web1" (vpravo) a "web2" (vľavo)}
-\label{fig:x win_web}
-\end{figure}
-
 \section{Poštový server}
 \paragraph{}
 V server manageri klikneme na tools a v záložne DNS, nasmerujume sa ku DNS severu a vytvoríme nové záznamy pre mail server. Cname záznam mail 158.193.139.74, dva MX(Mail exchanger) záznamy 0 mail sos3.local a 10 mail sos3.local.
 \paragraph{}
 Zo stránky mailenable.com stiahneme standart edition. Začneme inštaláciou stiahnutého balíčka, zaklikneme web mail service(server). V nasledujúcich krokoch napíšeme do Domain Name: sos3.local a DNS host: 192.168.0.2 a smtp port: 25. Počas inštalácie nám vybehne tabuľká, kde odklikneme aby sa mailserver inštaloval ako webserver ISS. V server manageri po kliknutí servers -> localhost -> system -> diagnose si skontrolujeme či všetky políčka sú pass, čo nám značí že mail enable funguje. V ďalšom kroku servers -> localhost -> services and connectors  a na SMTP klikneme pravým tlačidlom a klikneme na properties. V záložne general nastavíme default mail domain name čo je v našom prípade mail.sos3.local. Ďalej v záložke smart host nastavíme IP/DOMAIN 158.193.139.74. Po reštarte serveru vidíme že, všetky service sú running.
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{win_mail_server}
-\caption{Inštalácia poštového servera MainEnable}
-\label{fig:x win_mail}
-\end{figure}

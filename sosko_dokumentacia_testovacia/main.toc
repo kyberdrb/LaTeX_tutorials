@@ -74,124 +74,120 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}DHCP}{12}
+\contentsline {section}{\numberline {4.6}DHCP}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}NTP}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.8}Web server}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.1}Joomla}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.2}Mediawiki}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{12}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}NTP}{12}
+\contentsline {paragraph}{}{12}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.8}Web server}{14}
+\contentsline {section}{\numberline {4.9}Po\IeC {\v s}tov\IeC {\'y} server}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Windows}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}DHCP}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}DNS}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{14}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{15}
+\contentsline {section}{\numberline {5.3}NTP}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}NAT}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}Web server}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{15}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{15}
+\contentsline {section}{\numberline {5.6}Po\IeC {\v s}tov\IeC {\'y} server}{15}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{15}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.8.1}Joomla}{15}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{15}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{15}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{15}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{16}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{16}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.8.2}Mediawiki}{16}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{16}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{16}
+\contentsline {chapter}{\numberline {6}Z\IeC {\'a}ver}{16}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{16}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{16}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{16}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.9}Po\IeC {\v s}tov\IeC {\'y} server}{17}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{17}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{17}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{17}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Windows}{18}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}In\IeC {\v s}tal\IeC {\'a}cia}{18}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{18}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}DHCP}{21}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{21}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{21}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{21}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{21}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{21}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}DNS}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}NTP}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}NAT}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Web server}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{24}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Po\IeC {\v s}tov\IeC {\'y} server}{25}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{25}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{26}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Z\IeC {\'a}ver}{27}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{27}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{27}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{27}

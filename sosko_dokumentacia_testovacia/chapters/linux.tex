@@ -65,35 +65,7 @@ Počítače v lokálnej sieti sa dokážu navzájompingať pomocou svojich hostn
 Firewall bol nakonfigurovaný tak, aby prepúšťal DNS požiadavky na lokálnej sieti, a tiež aby prepúšťal požiadavky z internetu na obidva DNS servery t.j. aby boli obidva DNS servery viditeľné zvonku (PREROUTING). Záznamy pre DNS sú pre obidve verejné IP adresy pre udp aj tcp port 53 (zdrojový aj cieľový).
 \paragraph{}
 V prípade, že sa vyskytli problémy, skúšali sme vypnúť firewall, kontrolovali sme konfiguračné súbory Master DNS servera príkazmi „named-checkconf“ a „named-checkzone“ a príkazom „tcpdump“ sme monitorovali prenášané správy. Pri každej zmene konfiguračných súborov bolo treba reštartovať bind9 / isc-dhcp-server / interface.
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_master_external}
-\caption{Verejné DNS záznamy}
-\label{fig:x dns_external}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_master_local}
-\caption{Vnútorné DNS záznamy}
-\label{fig:x dns_internal}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_dns_views}
-\caption{Konfigurácia DNS pohľadov}
-\label{fig:x dns_views}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_named_options}
-\caption{Konfigurácia DNS forwardera}
-\label{fig:x dns_forwarder}
-\end{figure}
-
+\\
 \paragraph{}
 Zdroje:\\
 https://www.howtoforge.com/two\_in\_one\_dns\_bind9\_views\\
@@ -104,44 +76,9 @@ DHCP server (S2) sme museli upraviť tak, aby prideľoval aj DNS adresy serverov
 \paragraph{}
 Dynamic Host Configuration Protocol (DHCP) je súbor zásad, ktoré využívajú komunikačné zariadenia (počítač, router alebo sieťový adaptér), umožňujúci zariadeniu vyžiadať si a získať IP adresu od servera, ktorý má zoznam adries voľných na použitie.DHCP Server (Dynamic Host Configuration Protocol) vykonáva automatické pridelenie IP adries svojim klientom. Môžu to byť akékoľvek systémy, podporujúce DHCP. DHCP je štandardný protokol, môžu ho využívať aj systémy mimo Microsoft. Z Microsoft operačných systémov podporujú funkciu DHCP klienta všetky až na veľmi exotický LAN Manager pre OS / 2.V rámci siete potom máme DHCP Server - prideľujúca adresy a počítače - ktoré je od neho preberajú (DHCP Clients). V sieti môžu byť aj počítače, ktoré majú tieto adresy nastavené manuálne.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_dhcp}
-\caption{Konfiguračný súbor pre DHCP}
-\label{fig:x dhcp_config}
-\end{figure}
-
 \section{NTP}
 \paragraph{}
-NTP(Network Time Protocol) je protokol na sychronizáciu všetkých počítačov pripojených do vnutornej siete. Tento protokol zaisťuje, aby všetky počítače v sietei mali rovnaký a presný čas. Bol nvrhnutý aby odolával následkom premenlivého zdržania pri doručovaní paketov. NTP používa UDP na porte 123. NTP server sme zvolili server2, ktorý má ip adresu 192.168.0.3. Nainštalovali sme NTP príkazom apt-get install ntp. Na klientoch sme nainštalovali NTP pomocou príkazu apt-get install ntp ntpdate. V súbore na serveri s2 /etc/ntp.conf sme pridali slovenské servery zo stránky www.pool.ntp.org/zone/sk. a ostatné servery sme zakomentovali. Klienti si z master serveru aktualizujú čas.
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_ntp_konfiguracia_server}
-\caption{Konfigurácia NTP servera}
-\label{fig:x ntp_config_server}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_ntp_konfiguracia_klient}
-\caption{Konfigurácia NTP na klientovi}
-\label{fig:x ntp_config_client}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_ntp_1}
-\caption{Validácia NTP konfigurácie - 1}
-\label{fig:x ntp_config_valid_1}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_ntp_2}
-\caption{Validácia NTP konfigurácie - 2}
-\label{fig:x ntp_config_valid_2}
-\end{figure}
+NTP(Network Time Protocol) je protokol na sychronizáciu všetkých počítačov pripojených do vnutornej siete. Tento protokol zaisťuje, aby všetky počítače v sietei mali rovnaký a presný čas. Bol nvrhnutý aby odolával následkom premenlivého zdržania pri doručovaní paketov. NTP používa UDP na porte 123. NTP server sme zvolili server2, ktorý má ip adresu 192.168.0.3. Nainštalovali sme NTP príkazom apt-get install ntp. Na klientoch sme nainštalovali NTP pomocou príkazu apt-get installntpntpdate. V súbore na serveri s2 /etc/ntp.conf sme pridali slovenské servery zo stránky www.pool.ntp.org/zone/sk. a ostatné servery sme zakomentovali. Klienti si z master serveru aktualizujú čas.
 
 \section{Web server}
 \paragraph{}
@@ -151,9 +88,9 @@ PHP (PHP: Hypertext Preprocessor) je populárny opensource skriptovací jazyk, k
 \paragraph{}
 MySQL je slobodný a otvorený viacvláknový, viacužívateľský SQL relačný databázový server. MySQL je podporovaný na viacerých platformách (ako Linux, Windows či Solaris) a je implementovaný vo viacerých programovacích jazykoch ako PHP, C++ či Perl. Databázový systém je relačný, typu DBMS (database management system). Každá databáza je v MySQL tvorená z jednej alebo z viacerých tabuliek, ktoré majú riadky a stĺpce. V riadkoch sa rozoznávajú jednotlivé záznamy, stĺpce udávajú dátový typ jednotlivých záznamov, pracuje sa s nimi ako s poľami. Práca s MySQL databázou je vykonávaná pomocou takzvaných dotazov, ktoré vychádzajú z programovacieho jazyka SQL (StructuredQueryLanguage).
 \paragraph{}
-Na webový server sme použili apache. Apache HTTP Server je softwarový webový server s Opensource licenciou pre Linux, BSD, Microsoft Windows a iné platformy. V dnešnej dobe je najrozšírenejším na celom svete. Pre plnú fukncionalitu webového servera sme museli nainštalovať apache, mysql, php príkazom:\\
+Na webový server sme použili apache. Apache HTTP Server je softwarový webový server s Opensource licenciou pre Linux, BSD, Microsoft Windows a iné platformy. V dnešnej dobe je najrozšírenejším na celom svete. Pre plnú fukncionalitu webového servera sme museli nainštalovať nainštalovaťapache, mysql, php príkazom:\\
 \paragraph{}
-apt-get install apache2 mysql php5\\
+apt-get install apache2 mysql php5ň\\
 \paragraph{}
 V adresári /var/www/ sme vytvorili priečinky s názvami web1 a web2. Kde web1 a web2 predstavovali dva virutálne webové servery. Následne sme v etc/apache2/sites-available 003-wiki.sos3.local.conf sme pridali cestu ku web stránke /var/www/web1 a ServerName web2.sos3.local. Pre joomlu v súbore 002-joomla.sos3.local.conf sme pridlai cestu k adresaru ked uz DocumentRoot /var/www/web1 a ServerName web1.sos3.local
 \paragraph{}
@@ -183,7 +120,7 @@ Následne sme v prehliadači otvorili web1.sos3.local a podľa príslušných kr
 \paragraph{}
 V priečinku var/www/web1 sme stiahli Wikimedia pomocou príkazu\\
 \paragraph{}
-wget https://www.mediawiki.org/wiki/Download/mediawiki-1.2.8.zip\\
+wgethttps://www.mediawiki.org/wiki/Download/mediawiki-1.2.8.zip\\
 \paragraph{}
 Následne sme odzipovali tento súbor príkazom\\
 \paragraph{}
@@ -191,24 +128,10 @@ unzip mediawiki-1.2.8.zip\\
 \paragraph{}
 A v poslednom kroku sme v prehliadači web2.sos3.local nainštalovali mediawiki.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_web1_konfiguracia}
-\caption{Konfiguračný súbor webstránky}
-\label{fig:x web1_config_file}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{linux_web_konfiguraky_webstranok}
-\caption{Prehľad konfiguračných súborov webstránok}
-\label{fig:x web_config_files_list}
-\end{figure}
-
 \section{Poštový server}
 \paragraph{}
 Na poštový server sme použili postfix.Postfix je počítačový program pre unixové systémy pro prepravu elektronickej pošty (MTA).
 \paragraph{}
 Najprv bolo ptorebné nainštalovať postfix príkazom apt-get installpostfix prešli sme inštaláciou kde sme nastavili hostname sos3.local. Následne sme museli reštartovať postfixservicepostfixrestart. V súbore /etc/postfix/main.cf je potrebné upraviť myhostname = sos3.local, odkomentovať\\
 \paragraph{}
-pridat konfigurak a obrazky
+pridat konfigurak
