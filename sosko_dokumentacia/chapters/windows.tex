@@ -1,5 +1,12 @@
-\section{Inštalácia}
+\section{Inštalácia operačného systému}
 \paragraph{}
+Ako operačný systém pre servery sme nainštalovali Windows Server 2016 x64. Pre desktopy sme použili už predinštalovaný virtuálny stroj s Windows 7 x64.
+
+\paragraph{}
+Windows Server sme v rámci VirtualBox-u nastavili rovnako ako pri Debian-e s tým rozdielom, že sme namiesto "Debian x64" použili šablónu "Windows 10 x64". Servery mali jeden sieťový adaptér a bol nastavený rovnako ako pri Debian serveroch. Dva sieťové adaptéry boli nastavené na Windows Server firewall-e, rovnako ako aj Debian na firewall-e, s rovnakou konfiguráciou. Osobitne sme však museli zmeniť nastavenia v časti Display -\textgreater Video Memory na maximálnu možnú hodnotu (128MB s 2D akceleráciou), aby bol zážitok z používania čo najplynulejší. Tiež sme zdvihli množstvo dostupnej operačnej pamäte na 2048MB a počet procesorov na 2. Nakoniec sme v časti Storage pridali inštalačné médium pre Windows Server.
+
+\paragraph{}
+Po vykonaní potrebných nastavení vo VirtualBox-e sme spustili Windows Server virtuálku. Inštalácia bola veľmi jednoduchá - stačilo stále klikať na tlačidlo \say{Next}. Pri voľbe typu inštalácie sme zvolili \say{Custom installation}, vymazali sme všetky existujúce partície, vytvorili jedinú partíciu maximálnej veľkosti. Nastavenia sme potvrdili a Windows sa po chvíli nainštaloval. Po prihláseni sme po chvíli videli aplikáciu \say{Server Manager} , pomocou ktorej budeme spravovať jednotlivé súčasti systému Windows Server.
 
 \begin{figure}[!htb]
 \centering
@@ -18,15 +25,36 @@
 \begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.7]{win_priprava_3}
-\caption{}
+\caption{Spôsob inštalácie novej role pre Windows Server}
 \label{fig:x win_prep_3}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.7]{win_priprava_4}
-\caption{}
+\caption{Nainštalované role pre systém Windows Server}
 \label{fig:x win_prep_4}
+\end{figure}
+
+\section{Základná konfigurácia}
+\paragraph{}
+Do Windows Server-u 2016 sme nainštalovali webový prehliadač Mozilla Firefox alebo Google Chrome (podľa preferencie - Internet Explorer bol prakticky nepoužiteľný). Podobne ako Windows 10, aj Windows Server 2016 inštaluje aktualizácie automaticky, pričom sa aktualizácie inštalujú do systému samé od seba, bez vedomia administrátora. Preto sme sa rozhodli automatické aktualizácie vypnúť priamo v nastavení služieb systému Windows. Konkrétne sme vypli službu \say{Windows Update} tým, že sme jej stav nastavili na \say{Disabled}. Po nastavení sme reštartovali servery.
+
+\section{DNS}
+\paragraph{}
+V prvom rade sme si zvolili Master a Slave. Master je server1 (192.168.0.2) a Slave server2 (192.168.0.3)
+\paragraph{}
+DNS master nainštalujeme pomocou Windows Server Manager. Klikneme na Manage , vyberieme možnosť Add roles and features daľej Role-based or feature-basedinstallation, zobrazí sa  zoznam serverov, my vyberieme náš server a zvolímezo zoznamu rolesDNS Server a dokončíme inštaláciu.
+\paragraph{}
+Po inštalácií DNS balíka sme sa dostali cez Tools -\textgreater{} DNS -\textgreater{} Configure a DNS server -\textgreater{} Create a forward lookupzone k vytvoreniu primárnej forward lookupzóny sos1.local , nastavili sme aj  nech záznamy preposiela na Slave 192.168.0.3.
+\paragraph{}
+Prešli sme k inštalácii DNS Slave.Postup ako pri DNS Master avšak  DNS server bolo potrebné nastaviť na slavemode. Vybrali sme  Tools -\textgreater{} Forward lookupzones -\textgreater{} New zone. Hneď v prvom kroku sme vybrali  možnosť nie Primaryzone ale Secondaryzone a taktiež  meno zóny .V ďalšom kroku určíme DNS Masterserver,v našom riešení ma  IP 192.168.0.2 .Dokončíme vytváranie zóny pomocou Next a Finish. Onedlho si Slave stiahne záznamy z DNS Master servera.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.7]{win_dns_win_zaznamy}
+\caption{DNS záznamy}
+\label{fig:x win_dns}
 \end{figure}
 
 \section{DHCP}
@@ -52,22 +80,6 @@ Nakoniec sme nastavili bránu na „192.168.1.1”, pridali sme IP adresy našic
 \label{fig:x win_dhcp_pool}
 \end{figure}
 
-\section{DNS}
-\paragraph{}
-V prvom rade sme si zvolili Master a Slave. Master je server1 (192.168.0.2) a Slave server2 (192.168.0.1)
-\paragraph{}
-DNS master nainštalujeme pomocou Windows Server Manager. Klikneme na Manage , vyberieme možnosť Add roles and features daľej Role-based or feature-basedinstallation, zobrazí sa  zoznam serverov, my vyberieme náš server a zvolímezo zoznamu rolesDNS Server a dokončíme inštaláciu.
-\paragraph{}
-Po inštalácií DNS balíka sme sa dostali cez Tools -\textgreater{} DNS -\textgreater{} Configure a DNS server -\textgreater{} Create a forward lookupzone k vytvoreniuprimárnej forward lookupzóny sos1.local , nastavili sme aj  nech záznamy preposiela na Slave 192.168.0.3.
-\paragraph{}
-Prešli sme k inštalácii DNS Slave.Postup ako pri DNS Master avšak  DNS server bolo potrebné nastaviť na slavemode. Vybrali sme  Tools -\textgreater{} Forward lookupzones -\textgreater{} New zone. Hneď v prvom kroku sme vybrali  možnosť nie Primaryzone ale Secondaryzone a taktiež  meno zóny .V ďalšom kroku určíme DNS Masterserver,v našom riešení ma  IP 192.168.0.2 .Dokončíme vytváranie zóny pomocou Next a Finish. Onedlho si Slave stiahne záznamy z DNS Master servera.
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.7]{win_dns_win_zaznamy}
-\caption{DNS záznamy}
-\label{fig:x win_dns}
-\end{figure}
 
 \section{NTP}
 \paragraph{}
@@ -77,22 +89,6 @@ Na aplikáciu  zmien sme reštartovali Windows Timeservice príkazom zadaným do
 \\
 \\
 net stop w32time \&\& net start w32tim.
-
-\section{NAT}
-\paragraph{}
-Nainštalovanie sme vykonali vo Windows Server Manageri, kde cez Add Roles and Features. Pridali sme
-\\
-\\
-imidž
-\paragraph{}
-potvrdili sme službu Routing a následne sme ju nainštalovali. Pri inštalácii zvolíme sie\v{t}ový adaptér eth0, ktorý je pripojený k internetu. Po inštalácii je NAT plne funkčné, ale je potrebné prida\v{t} NAT záznamy na porte 53.  Ďalej sme ho potrebovali nakonfigurovať v control panel -\textgreater{} Administrative tools -\textgreater{} Routing and Remote Access. Po kliknutí na NAT, vyberieme záložku s adaptérom, ktorý je pripojený k internet. V Address Pool je potrebné nastavi\v{t} from, čo znamená našu počiatočnú public adresu 158.193.139.74 a to, čo je naša koncová adresa 158.193.139.75 a maska 255.255.255.0. V záložke services and ports je potrebné prida\v{t} 4 nové záznamy NAT pre DNS(Master-Slave, TCP-UDP).
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.79]{win_iis_remote_access}
-\caption{Povolenie vzdialeného prístupu}
-\label{fig:x win_web}
-\end{figure}
 
 \section{Web server}
 \paragraph{}
@@ -135,4 +131,15 @@ Zo stránky mailenable.com stiahneme standart edition. Začneme inštaláciou st
 \includegraphics[scale=0.79]{win_mail_server}
 \caption{Inštalácia poštového servera MainEnable}
 \label{fig:x win_mail}
+\end{figure}
+
+\section{NAT}
+\paragraph{}
+Inštaláciu sme vykonali vo Windows Server Manageri, kde sme cez \say{Add Roles and Features} pridali službu \say{Routing and Remote Access} a následne sme ju nainštalovali. Pri inštalácii zvolíme sie\v{t}ový adaptér eth0, ktorý je pripojený k internetu. Po inštalácii je NAT plne funkčné, ale je potrebné prida\v{t} NAT záznamy na porte 53 pre tcp aj udp.  Ďalej sme potrebovali nakonfigurovať NAT v Control Panel -\textgreater{} Administrative tools -\textgreater{} Routing and Remote Access. Po kliknutí na NAT, vyberieme záložku s adaptérom, ktorý je pripojený k internet. V Address Pool je potrebné nastavi\v{t} položku \say{from}, čo znamená náš rozsah verejných adries 158.193.139.74 a to, čo je naša koncová adresa 158.193.139.75 a maska 255.255.255.252. V záložke services and ports je potrebné prida\v{t} 4 nové záznamy NAT pre DNS(Master-Slave, TCP-UDP).
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.79]{win_iis_remote_access}
+\caption{Povolenie vzdialeného prístupu}
+\label{fig:x win_web}
 \end{figure}
